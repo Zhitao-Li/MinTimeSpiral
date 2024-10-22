@@ -1,0 +1,5 @@
+Results/
+Lib/socp/build/
+Lib/socp/bin/
+.directory
+*.mexa64
