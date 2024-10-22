@@ -1,0 +1,21 @@
+#! /bin/bash
+
+projectDir="./Lib/socp/"
+buildDir="./Lib/socp/build/Release/"
+binDir="./Lib/socp/bin/"
+
+if [ ! -d "$buildDir" ]; then
+    echo "Making build directory '$buildDir'."
+    mkdir "$buildDir"
+fi
+
+if [ ! -d "$binDir" ]; then
+    echo "Making binary directory '$binDir'."
+    mkdir "$binDir"
+fi
+
+cmake -S "$projectDir" -B "$buildDir" -DCMAKE_BUILD_TYPE=Release
+
+cd "$buildDir"
+
+make
