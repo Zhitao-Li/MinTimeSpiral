@@ -4,7 +4,7 @@ close all;
 
 addpath('Lib/');
 addpath('Lib/socp/bin/');
-addpath('Lib/minTimeGradientMex/');
+addpath('Lib/minTimeGradientMex/bin/');
 
 if ~exist('Results/', 'dir')
     mkdir('Results');

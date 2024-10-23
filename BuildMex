@@ -1,21 +1,27 @@
 #! /bin/bash
 
-projectDir="./Lib/socp/"
-buildDir="./Lib/socp/build/Release/"
-binDir="./Lib/socp/bin/"
+projectDirSocp="./Lib/socp/"
+buildDirSocp="./Lib/socp/build/Release/"
+binDirSocp="./Lib/socp/bin/"
 
-if [ ! -d "$buildDir" ]; then
-    echo "Making build directory '$buildDir'."
-    mkdir "$buildDir"
-fi
+projectDirMinTime="./Lib/minTimeGradientMex/"
+buildDirMinTime="./Lib/minTimeGradientMex/build/Release/"
+binDirMinTime="./Lib/minTimeGradientMex/bin/"
 
-if [ ! -d "$binDir" ]; then
-    echo "Making binary directory '$binDir'."
-    mkdir "$binDir"
-fi
 
-cmake -S "$projectDir" -B "$buildDir" -DCMAKE_BUILD_TYPE=Release
+# SOCP
+cmake -S "$projectDirSocp" -B "$buildDirSocp" -DCMAKE_BUILD_TYPE=Release
 
-cd "$buildDir"
+cd "$buildDirSocp"
+
+make
+
+
+# MinTimeGradient
+cd "../../../../"
+cd "$buildDirMinTime"
+cmake -S "$projectDirMinTime" -B "$buildDirMinTime" -DCMAKE_BUILD_TYPE=Release
+
+cd "$buildDirMinTime"
 
 make

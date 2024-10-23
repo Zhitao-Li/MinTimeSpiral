@@ -1,5 +1,7 @@
 Results/
 Lib/socp/build/
 Lib/socp/bin/
+Lib/minTimeGradientMex/build/
+Lib/minTimeGradientMex/bin/
 .directory
 *.mexa64
