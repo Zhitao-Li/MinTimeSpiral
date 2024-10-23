@@ -5,8 +5,8 @@ close all;
 addpath('Lib/');
 addpath('Lib/socp/bin/');
 
-if ~exist('Result', 'dir')
-    mkdir('Result');
+if ~exist('Results', 'dir')
+    mkdir('Results');
 end
 
 %%
