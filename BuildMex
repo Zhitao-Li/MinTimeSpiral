@@ -8,6 +8,10 @@ projectDirMinTime="./Lib/minTimeGradientMex/"
 buildDirMinTime="./Lib/minTimeGradientMex/build/Release/"
 binDirMinTime="./Lib/minTimeGradientMex/bin/"
 
+projectDirSDC3="./Lib/SDC3/"
+buildDirSDC3="./Lib/SDC3/build/Release/"
+binDirSDC3="./Lib/SDC3/bin/"
+
 
 # SOCP
 cmake -S "$projectDirSocp" -B "$buildDirSocp" -DCMAKE_BUILD_TYPE=Release
@@ -19,9 +23,17 @@ make
 
 # MinTimeGradient
 cd "../../../../"
-cd "$buildDirMinTime"
 cmake -S "$projectDirMinTime" -B "$buildDirMinTime" -DCMAKE_BUILD_TYPE=Release
 
 cd "$buildDirMinTime"
+
+make
+
+
+# SDC3
+cd "../../../../"
+cmake -S "$projectDirSDC3" -B "$buildDirSDC3" -DCMAKE_BUILD_TYPE=Release
+
+cd "$buildDirSDC3"
 
 make
